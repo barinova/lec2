@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  /*int numI, numJ, i, j, tmp = 1, temp;
+	int n = 0;
+	char space[10] = "         ";
+	printf("Enter i j\n");
+	scanf("%d %d", &numI, &numJ);
+	for(int i = 0; i < numI; i++)
+	{
+		temp = tmp;
+		printf("%s", space);
+		for(j = 0; j < numJ; j ++)
+		{
+			if(j <= (int(numJ/2) + n))
+			printf(" ");
+			else
+			{ 
+				while((temp--) >0)
+					printf("*");
+			}
+		}
+		printf("\n");
+		n-=1;
+		tmp += 2;
+	}
+	*/
+
+	int i, k, l, tmp = 1;
+	printf("Enter n:");
+	scanf("%d", &i);
+	printf("\n");
+	k = i - 1;
+	do
+	{
+	for(int n = 0; n < k; n++)
+		printf(" ");
+	k--;
+	for(l = 0 ; l < tmp; l++)
+		printf("*");
+	tmp+=2;
+	i--;
+	printf("\n");
+	}while(i>0);
+	return 0;
+}
