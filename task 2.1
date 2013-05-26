@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <time.h>
+#include <math.h>
+int main()
+{
+  double h, time, hight;
+	double g=9.81;
+	printf("Enter h: ");
+	scanf("%lf", &hight);
+	int t = 0;
+	h=hight-(9.81*t*t)/2;
+	while(h > 0)
+	{
+		printf("time %d hight %lf\n", t, h);
+		h=hight-(9.81*t*t)/2;
+		t++;
+	}
+	printf ("BABAH\n",t);
+	return 0;
+}
