@@ -1,60 +1,23 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int main()
 {
-  char pas[10][10];
-	int i, j, n, countD, countC, countS, temp[3];
-	unsigned char c;
-	//char a='A', z='Z', a1='a', z2 = 'z';
-	for(i = 0; i < 10; i++)
-	{
-		//printf("%d /tC = countS = 0;
-		countC = countD = countS = 0;
-		for(j = 0; j < 10;j++)
+	char c;  
+	int countSymb = 0, countSpace = 0;
+	do {
+        scanf("%c", &c);
+		while(c == ' ')
 		{
-			n = rand()%3;
-			switch(n)
-			{
-				case 0:{c =  (rand() % 25 + 65); countC++;break;}
-				case 1:{c =  (rand() % 25 + 97); countS++; break;}
-				case 2:{c =  rand() % 10 + 48; countD++;break;}
-			}
-			pas[i][j] = c;
-			//printf("%c", c);
+			if(countSymb == 0)
+				scanf("%c", &c);
+			countSpace ++;
 		}
-		n = NULL;
-			if(countC == 0)
-			{
-				do{ n = rand()%10;}while(n != temp[1] && n != temp[2]);
-				pas[i][n] = (rand() % (( 'Z'-'A' +1)) +'A');
-				//countC++;
-				temp[0] = n;
-			}
-			if(countS == 0)
-			{
-				do{ n = rand()%10;}while(n != temp[0] && n != temp[2]);
-				pas[i][n] = (rand() % (( 'z'-'a' +1)) +'a');
-				//countS++;
-				temp[1] = n;
-			}
-			if(countD == 0)
-			{
-				do{n = rand()%10;}while(n != temp[0] && n != temp[1]);
-				pas[i][n] = rand() % 10;
-				//countD++;
-				temp[2] = n;
-			}
-			
-			printf("\n");
-		for(j = 0; j < 10;j++)
-		{
-			printf("%c",pas[i][j]);
-		}
-			printf("\n");
-
+		if(countSpace > 0)
+			printf(" %c", c);
+		else 
+			printf("%c", c);
+		countSpace = 0;
+	}while(c!='\n');
+	return 0 ;
 	}
-	
-
-return 0;
-}
