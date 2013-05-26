@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  int digit, var = -1;
+
+	digit = rand()%101;
+	
+	do
+	{
+	if(var != -1)
+	{
+		if(var > digit)
+			printf("You're digit very big");
+		if(var < digit)
+			printf("You're digit very small");
+		if(var == digit)
+			printf("You win: %d", digit);
+	}
+	printf("\nPut digit:\n");
+	scanf("%d", &var);
+	}while(var != digit);
+	return 0 ;
+}
